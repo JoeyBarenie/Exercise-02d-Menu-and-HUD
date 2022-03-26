@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://UI/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Starfield-Slow-20sec-Loop.ogv" type="VideoStream" id=3]
 [ext_resource path="res://Asteroid/Asteroid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=6]
@@ -9,6 +10,14 @@
 [node name="Game" type="Node2D"]
 __meta__ = {
 "_editor_description_": "The root of the scene"
+}
+
+[node name="Background" type="VideoPlayer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="Player_Container" type="Node2D" parent="."]

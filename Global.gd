@@ -3,7 +3,7 @@ extends Node
 var VP = Vector2.ZERO
 
 var score = 0
-var time = 10
+var time = 100
 var lives = 5
 
 
@@ -32,16 +32,12 @@ func update_score(s):
 	
 func update_lives(l):
 	score += l
-	if lives <= 0:
-		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
 	var hud = get_node_or_null("/root/Game/UI/HUD")
 	if hud != null:
 		hud.update_lives()
 		
 func update_time(t):
 	score += t
-	if time <= 0:
-		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
 	var hud = get_node_or_null("/root/Game/UI/HUD")
 	if hud != null:
 		hud.update_time()
